@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <img src="images/1.jpg" alt=""/>
+    <button>点赞(0)</button>
+    <img src="images/2.jpg" alt=""/>
+    <button>点赞(0)</button>
+    <img src="images/3.jpg" alt=""/>
+    <button>点赞(0)</button>
+    <img src="images/4.jpg" alt=""/>
+    <button>点赞(0)</button>
+    <script>
+        var count=0;
+        //var imgNode=document.getElementsByTagName('img');
+        var btns=document.getElementsByTagName('button');
+        function fun(){
+            var count=0;
+            return function(){
+                count++;
+                this.innerText='赞('+count+')';
+            }
+        }
+
+        for(var i=0;i<btns.length;i++){
+            /*btns[i].onclick=function(){
+                count++;
+                this.innerText='赞('+count+')';
+            }*/
+            btns[i].onclick=fun();
+        }
+
+    </script>
+</body>
+</html>
